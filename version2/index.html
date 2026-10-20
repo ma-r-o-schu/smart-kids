@@ -16,6 +16,7 @@
       --orange: #f08a3e;
       --border: #e8e2da;
       --shadow: rgba(47, 93, 138, 0.12);
+      --verlauf: linear-gradient(135deg, rgba(47,93,138,0.10), rgba(240,138,62,0.16));
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
@@ -27,6 +28,7 @@
         --orange: #f5a463;
         --border: #2f3740;
         --shadow: rgba(0, 0, 0, 0.35);
+        --verlauf: linear-gradient(135deg, rgba(127,176,221,0.14), rgba(245,164,99,0.18));
       }
     }
     * { box-sizing: border-box; }
@@ -39,6 +41,11 @@
       line-height: 1.55;
     }
     main { max-width: 640px; margin: 0 auto; padding: 28px 18px 64px; }
+    [hidden] { display: none !important; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
 
     .version2 {
       display: inline-block;
@@ -52,14 +59,23 @@
       text-decoration: none;
     }
     .version2:hover, .version2:focus-visible { background: var(--orange); color: #fff; outline: none; }
-    .version2[hidden] { display: none; }
 
-    header { display: flex; align-items: center; gap: 16px; }
-    header img { width: 68px; height: 68px; flex: none; }
-    header h1 { font-size: 1.45rem; line-height: 1.25; margin: 0; color: var(--blue); }
+    /* Kopfbereich mit Verlauf */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 22px;
+      background: var(--verlauf), var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 4px 18px var(--shadow);
+    }
+    .hero img { width: 84px; height: 84px; flex: none; }
+    .hero h1 { font-size: 1.35rem; line-height: 1.25; margin: 0; color: var(--blue); }
 
     .bio {
-      margin-top: 18px;
+      margin-top: 16px;
       padding: 16px 20px;
       background: var(--card);
       border-radius: 14px;
@@ -109,50 +125,95 @@
     .fakt-punkte span { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); }
     .fakt-punkte span.aktiv { background: var(--orange); }
 
-    /* Navigation: untereinander */
-    .start { margin-top: 26px; }
-    .start h2 { font-size: 0.95rem; margin: 0 0 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
-    .nav { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
-    .nav a {
-      display: block;
-      padding: 14px 16px;
-      background: var(--card);
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--orange);
-      border-radius: 12px;
-      text-decoration: none;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .nav a strong { display: block; font-size: 1rem; color: var(--blue); }
-    .nav a span { display: block; font-size: 0.88rem; color: var(--muted); margin-top: 2px; }
-    .nav a:hover, .nav a:focus-visible { transform: translateY(-2px); box-shadow: 0 6px 16px var(--shadow); outline: none; }
+    /* Akkordeon */
+    .start { margin-top: 30px; }
+    .start h2 { font-size: 0.95rem; margin: 0 0 6px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+    .akkordeon { display: grid; gap: 12px; }
 
-    /* Schritte */
-    section.schritt, section.video { margin-top: 36px; scroll-margin-top: 16px; }
-    section.schritt h2, section.video h2 { font-size: 1.15rem; margin: 0; color: var(--blue); }
-    section.schritt h2 span { color: var(--orange); margin-right: 6px; }
-    .einleitung { margin: 6px 0 0; font-size: 0.93rem; color: var(--muted); }
+    .akk {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 2px 10px var(--shadow);
+      overflow: hidden;
+      scroll-margin-top: 16px;
+    }
+    .akk-kopf {
+      display: grid;
+      grid-template-columns: 40px 1fr 24px;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      padding: 16px;
+      background: none;
+      border: 0;
+      color: var(--text);
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+    .akk-kopf:focus-visible { outline: 2px solid var(--orange); outline-offset: -2px; }
+    .nummer {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: #fff;
+      font-weight: 700;
+    }
+    .kopf-text strong { display: block; font-size: 1.02rem; color: var(--blue); }
+    .kopf-text .untertitel { display: block; font-size: 0.88rem; color: var(--muted); margin-top: 2px; }
+    .chevron {
+      font-size: 1.5rem;
+      line-height: 1;
+      color: var(--muted);
+      transition: transform 0.2s ease;
+    }
+    .akk.offen .chevron { transform: rotate(90deg); }
+
+    .akk-inhalt { padding: 0 16px 16px; }
+    .einleitung { margin: 0 0 6px; font-size: 0.93rem; color: var(--muted); }
 
     a.card {
-      display: block;
-      background: var(--card);
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      align-items: start;
+      background: var(--bg);
       border: 1px solid var(--border);
-      border-left: 4px solid var(--blue);
       border-radius: 12px;
-      padding: 14px 16px;
-      margin: 10px 0;
+      padding: 12px 14px;
+      margin-top: 10px;
       text-decoration: none;
       color: var(--text);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
     a.card:hover, a.card:focus-visible { transform: translateY(-2px); box-shadow: 0 6px 16px var(--shadow); outline: none; }
-    a.card .format { display: inline-block; font-size: 0.75rem; color: var(--orange); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
-    a.card strong { display: block; font-size: 1rem; }
-    a.card span.beschr { display: block; font-size: 0.9rem; color: var(--muted); margin-top: 4px; }
-    a.card .region { display: inline-block; font-size: 0.75rem; color: var(--muted); margin-top: 6px; }
+    a.card .symbol { font-size: 1.5rem; line-height: 1.2; }
+    a.card strong { display: block; font-size: 0.98rem; }
+    a.card .beschr { display: block; font-size: 0.88rem; color: var(--muted); margin-top: 3px; }
+    a.card .region { display: inline-block; font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
 
-    /* Video (eingebettet, nur wenn embed_id gesetzt ist) */
+    /* Externer Navigationspunkt */
+    a.extern {
+      display: block;
+      padding: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--text);
+      box-shadow: 0 2px 10px var(--shadow);
+    }
+    a.extern strong { display: block; color: var(--blue); }
+    a.extern span { display: block; font-size: 0.88rem; color: var(--muted); margin-top: 2px; }
+    a.extern:hover, a.extern:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+
+    /* Video */
+    section.video { margin-top: 36px; }
+    section.video h2 { font-size: 1.15rem; margin: 0; color: var(--blue); }
     .video-rahmen {
       position: relative;
       width: 100%;
@@ -177,7 +238,7 @@
     #fehler { color: #b3261e; display: none; }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      a.card, .nav a { transition: none; }
+      a.card, .chevron { transition: none; }
     }
   </style>
 </head>
@@ -185,7 +246,7 @@
 <main>
   <a class="version2" id="version2" href="#" hidden></a>
 
-  <header>
+  <header class="hero">
     <img src="logo.svg" alt="Logo Medienkompetenz für Grundschulkinder">
     <h1 id="titel">Medienkompetenz für Grundschulkinder</h1>
   </header>
@@ -204,11 +265,10 @@
 
   <nav class="start" aria-labelledby="start-titel">
     <h2 id="start-titel">Was möchten Sie wissen?</h2>
-    <ul class="nav" id="navigation"></ul>
+    <div class="akkordeon" id="akkordeon"></div>
   </nav>
 
   <div id="fehler">Die Inhalte konnten nicht geladen werden. Bitte später erneut versuchen.</div>
-  <div id="schritte"></div>
 
   <section class="video" id="video" hidden>
     <h2 id="video-titel">Video-Tipp für Eltern</h2>
@@ -224,9 +284,14 @@
 
 <script>
   // Alle Inhalte stehen in links.json. Änderungen dort erscheinen nach dem Speichern automatisch.
-  const FORMAT_LABEL = {
-    text: 'Text', video: 'Video', audio: 'Audio', pdf: 'PDF',
-    buch: 'Buch', tool: 'Tool', beratung: 'Beratung'
+  const FORMAT = {
+    text:     { symbol: '📄', label: 'Text' },
+    video:    { symbol: '▶️', label: 'Video' },
+    audio:    { symbol: '🎧', label: 'Audio' },
+    pdf:      { symbol: '📋', label: 'PDF' },
+    buch:     { symbol: '📖', label: 'Buch' },
+    tool:     { symbol: '🧭', label: 'Tool' },
+    beratung: { symbol: '💬', label: 'Beratung' }
   };
   const FAKT_INTERVALL_MS = 7000;
 
@@ -263,7 +328,6 @@
       [...punkteEl.children].forEach((p, k) => p.classList.toggle('aktiv', k === index));
     }
 
-    // Timer startet nach jeder manuellen Aktion neu
     function starteTimer() {
       clearInterval(timer);
       if (n > 1) {
@@ -304,6 +368,21 @@
     starteTimer();
   }
 
+  // Eine Karte für einen Link mit Symbol für das Format
+  function karte(link) {
+    const f = FORMAT[link.format] || { symbol: '🔗', label: link.format || 'Link' };
+    const a = el('a', { class: 'card', href: link.url, target: '_blank', rel: 'noopener noreferrer' });
+    a.dataset.alter = (link.alter || ['alle']).join(' ');
+    a.appendChild(el('span', { class: 'symbol', 'aria-hidden': 'true', title: f.label }, f.symbol));
+    const text = el('span');
+    text.appendChild(el('span', { class: 'sr-only' }, f.label + ': '));
+    text.appendChild(el('strong', {}, link.titel));
+    if (link.beschreibung) text.appendChild(el('span', { class: 'beschr' }, link.beschreibung));
+    if (link.region && link.region !== 'bundesweit') text.appendChild(el('span', { class: 'region' }, 'Nur ' + link.region));
+    a.appendChild(text);
+    return a;
+  }
+
   function aufbauen(daten) {
     document.getElementById('titel').textContent = daten.profil.titel;
     document.title = daten.profil.titel;
@@ -320,42 +399,88 @@
 
     starteFakten(daten.fakten);
 
-    // Navigation: Schritte springen zum Abschnitt, Einträge mit url öffnen extern
-    const nav = document.getElementById('navigation');
-    daten.navigation.forEach(punkt => {
-      const li = el('li');
-      const ziel = punkt.url ? punkt.url : '#schritt-' + punkt.schritt;
-      const a = el('a', punkt.url
-        ? { href: ziel, target: '_blank', rel: 'noopener noreferrer' }
-        : { href: ziel });
-      a.appendChild(el('strong', {}, punkt.titel));
-      if (punkt.untertitel) a.appendChild(el('span', {}, punkt.untertitel));
-      li.appendChild(a);
-      nav.appendChild(li);
-    });
+    // Akkordeon: die Navigation bestimmt Titel und Reihenfolge, die Schritte liefern den Inhalt.
+    const container = document.getElementById('akkordeon');
+    const schritteById = {};
+    daten.schritte.forEach(s => { schritteById[s.id] = s; });
 
-    // Schritte und Karten (nur Links mit eingetragener Adresse)
-    const ziel = document.getElementById('schritte');
-    daten.schritte.forEach((s, index) => {
+    const kacheln = {};
+    daten.navigation.forEach((punkt, idx) => {
+      // Externer Eintrag ohne Schritt: einfacher Link
+      if (punkt.url && !punkt.schritt) {
+        const a = el('a', { class: 'extern', href: punkt.url, target: '_blank', rel: 'noopener noreferrer' });
+        a.appendChild(el('strong', {}, punkt.titel));
+        if (punkt.untertitel) a.appendChild(el('span', {}, punkt.untertitel));
+        container.appendChild(a);
+        return;
+      }
+
+      const s = schritteById[punkt.schritt];
+      if (!s) return;
       const links = s.links.filter(l => l.url);
       if (links.length === 0) return;
 
-      const sec = el('section', { class: 'schritt', id: 'schritt-' + s.id });
-      const h2 = el('h2');
-      h2.append(el('span', {}, String(index + 1)), s.titel);
-      sec.appendChild(h2);
-      sec.appendChild(el('p', { class: 'einleitung' }, s.einleitung));
-
-      links.forEach(link => {
-        const a = el('a', { class: 'card', href: link.url, target: '_blank', rel: 'noopener noreferrer' });
-        a.appendChild(el('span', { class: 'format' }, FORMAT_LABEL[link.format] || link.format));
-        a.appendChild(el('strong', {}, link.titel));
-        if (link.beschreibung) a.appendChild(el('span', { class: 'beschr' }, link.beschreibung));
-        if (link.region && link.region !== 'bundesweit') a.appendChild(el('span', { class: 'region' }, 'Nur ' + link.region));
-        sec.appendChild(a);
+      const item = el('section', { class: 'akk', id: 'schritt-' + s.id });
+      const kopf = el('button', {
+        type: 'button',
+        class: 'akk-kopf',
+        id: 'kopf-' + s.id,
+        'aria-expanded': 'false',
+        'aria-controls': 'inhalt-' + s.id
       });
-      ziel.appendChild(sec);
+      kopf.appendChild(el('span', { class: 'nummer', 'aria-hidden': 'true' }, String(idx + 1)));
+
+      const text = el('span', { class: 'kopf-text' });
+      text.appendChild(el('strong', {}, punkt.titel));
+      if (punkt.untertitel) text.appendChild(el('span', { class: 'untertitel' }, punkt.untertitel));
+      kopf.appendChild(text);
+      kopf.appendChild(el('span', { class: 'chevron', 'aria-hidden': 'true' }, '›'));
+
+      const inhalt = el('div', {
+        class: 'akk-inhalt',
+        id: 'inhalt-' + s.id,
+        role: 'region',
+        'aria-labelledby': 'kopf-' + s.id
+      });
+      inhalt.hidden = true;
+      if (s.einleitung) inhalt.appendChild(el('p', { class: 'einleitung' }, s.einleitung));
+      links.forEach(link => inhalt.appendChild(karte(link)));
+
+      item.append(kopf, inhalt);
+      container.appendChild(item);
+      kacheln[s.id] = { item, kopf, inhalt };
+
+      kopf.addEventListener('click', () => {
+        setzeOffen(s.id, inhalt.hidden);
+      });
     });
+
+    // Mehrere Kacheln dürfen gleichzeitig offen sein
+    function setzeOffen(id, an) {
+      const k = kacheln[id];
+      if (!k) return;
+      k.inhalt.hidden = !an;
+      k.kopf.setAttribute('aria-expanded', an ? 'true' : 'false');
+      k.item.classList.toggle('offen', an);
+    }
+
+    // Direktlink: z. B. …/version2/#informieren öffnet die passende Kachel
+    function ausHashOeffnen() {
+      const id = decodeURIComponent(location.hash.replace('#', '')).replace(/^schritt-/, '');
+      if (kacheln[id]) {
+        setzeOffen(id, true);
+        kacheln[id].item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    window.addEventListener('hashchange', ausHashOeffnen);
+
+    // Ohne Direktlink: erste Kachel offen, damit die Seite sofort Inhalt zeigt
+    if (location.hash) {
+      ausHashOeffnen();
+    } else {
+      const erste = Object.keys(kacheln)[0];
+      if (erste) setzeOffen(erste, true);
+    }
 
     // Video-Tipp: nur anzeigen, wenn eine YouTube-ID eingetragen ist
     if (daten.video && daten.video.embed_id) {
