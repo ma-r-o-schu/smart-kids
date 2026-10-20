@@ -1,0 +1,148 @@
+{
+  "profil": {
+    "titel": "Medienkompetenz für Grundschulkinder",
+    "bio": [
+      "Hallo zusammen! Schön, dass Ihr Euch für das Thema digitale Medien für Grundschulkinder interessiert. Hier erhaltet Ihr Infos zu Medienerziehung, -kompetenz und Infoabenden für Eltern.",
+      "Unser Motto: Ganz nach der Elterninitiative „Smarter Start“: Erst Kindheit, dann Phone – und erst Smart, dann Phone.",
+      "Wie beim Schwimmen oder im Straßenverkehr müssen wir unsere Kinder in der digitalen Welt begleiten. Ein eigenes Smartphone sollte eine bewusste Entscheidung sein – nicht nur, weil „alle es so machen“."
+    ]
+  },
+  "kategorien": [
+    {
+      "titel": "1. Basiswissen für alle",
+      "hinweis": "Für den Einstieg eignet sich oft ein zentral im Haushalt frei zugängliches Familien-Device.",
+      "links": [
+        {
+          "titel": "🌊 Surfschein für Kinder (Internet-ABC)",
+          "url": "https://www.internet-abc.de/surfschein/",
+          "beschreibung": "Für alle Kinder, die schon lesen können. Am besten gemeinsam die Lernmodule durchgehen!"
+        },
+        {
+          "titel": "📝 Mediennutzungsvertrag aufsetzen",
+          "url": "https://www.mediennutzungsvertrag.de/",
+          "beschreibung": "Feste Regeln & Zeitfenster vereinbaren statt endloser Diskussionen."
+        },
+        {
+          "titel": "ℹ️ BLM Medienkompetenz-Angebote",
+          "url": "https://www.blm.de/de/wir-foerdern/medienkompetenz/informationsangebote.cfm",
+          "beschreibung": "Informationen & Handreichungen der Bayerischen Landeszentrale für neue Medien."
+        }
+      ]
+    },
+    {
+      "titel": "2. Entscheidungshilfe: Das erste eigene Smartphone?",
+      "links": [
+        {
+          "titel": "🔍 Entscheidungshilfe: Ein Smartphone für mein Kind?",
+          "url": "https://www.medien-sicher.de/2025/04/entscheidungshilfe-ein-smartphone-fuer-mein-kind/",
+          "beschreibung": "Passt ein Smartphone jetzt schon? Ein Praxis-Ratgeber von medien-sicher.de."
+        },
+        {
+          "titel": "📋 Checkliste Erstes Smartphone (SCHAU HIN!)",
+          "url": "https://www.schau-hin.info/fileadmin/content/Downloads/Infografiken/Checkliste_ErstesSmartphone_250911.pdf",
+          "beschreibung": "Reife & Sicherheitskriterien im Überblick (PDF-Download)."
+        },
+        {
+          "titel": "🔄 Smartphone-Alternativen (Smarter Start)",
+          "url": "https://smarterstart.org/smartphone-alternativen",
+          "beschreibung": "Smarte Alternativen für Grundschulkinder entdecken."
+        }
+      ]
+    },
+    {
+      "titel": "3. Interviews, Artikel & Umfragen",
+      "links": [
+        {
+          "titel": "🎧 Körber-Stiftung: Unterschätzen Eltern digitale Risiken?",
+          "url": "https://koerber-stiftung.de/mediathek/unterschaetzen-eltern-digitale-risiken-daniel-wolff-ueber-medienerziehung-in-zeiten-von-ki-und-social-media/",
+          "beschreibung": "Sehr empfohlen: Gespräch mit Digitaltrainer Daniel Wolff über KI, YouTube Kids & Mediennutzung."
+        },
+        {
+          "titel": "📊 Elternumfrage 2026 (Körber-Stiftung)",
+          "url": "https://koerber-stiftung.de/projekte/elternumfrage/eltern-im-fokus-2026/",
+          "beschreibung": "Aktuelle Ergebnisse & Analysen zur Elternperspektive auf digitale Medien."
+        },
+        {
+          "titel": "💬 Interview mit Digitaltrainer Daniel Wolff",
+          "url": "https://juliameyn.com/interview-daniel-wolff",
+          "beschreibung": "Julia Meyn im Gespräch mit Daniel Wolff mit wertvollen Alltagstipps."
+        }
+      ]
+    },
+    {
+      "titel": "4. Gaming & Videospiele",
+      "links": [
+        {
+          "titel": "🕹️ SCHAU HIN! – Ratgeber Games",
+          "url": "https://www.schau-hin.info/games",
+          "beschreibung": "Allgemeine Infos, Chancen und Risiken von Videospielen."
+        },
+        {
+          "titel": "🎓 Eltern-LAN (bpb)",
+          "url": "https://www.bpb.de/veranstaltungen/reihen/eltern-lan/",
+          "beschreibung": "Kostenlose Online-Seminare der Bundeszentrale für politische Bildung."
+        },
+        {
+          "titel": "🎮 Spieleratgeber NRW",
+          "url": "https://spieleratgeber-nrw.de/",
+          "beschreibung": "Pädagogische Beurteilungen & Alters-Einschätzungen zu konkreten Spielen."
+        }
+      ]
+    },
+    {
+      "titel": "5. Buchtipps & Print-Materialien",
+      "links": [
+        {
+          "titel": "📖 Buch: Generation Glücklich (Zuckersüß Verlag)",
+          "url": "https://www.zuckersuessverlag.de/products/generation-gluecklich",
+          "beschreibung": "Buchtipp für Eltern und Kinder ab ca. 8 Jahren."
+        },
+        {
+          "titel": "📄 MiniMedia – Medienthemen für Kinder",
+          "url": "https://www.blm.de/de/wir-foerdern/medienkompetenz/informationsangebote/minimedia.cfm",
+          "beschreibung": "Einfach erklärt als PDF oder kostenfrei bestellbar (BLM)."
+        },
+        {
+          "titel": "📖 Buch: Allein mit dem Handy",
+          "url": "https://www.amazon.de/dp/3453607015",
+          "beschreibung": "Ratgeber für Eltern zum Umgang mit Online-Gefahren & Gewaltvideos."
+        },
+        {
+          "titel": "📖 Buch: WAS IST WAS – Handy & Smartphone",
+          "url": "https://tessloff.com/was-ist-was-handy/",
+          "beschreibung": "Kindgerechtes Sachbuch zum Thema Smartphone."
+        }
+      ]
+    },
+    {
+      "titel": "6. Blogtipps",
+      "links": [
+        {
+          "titel": "🌐 Medienzeit Elternblog",
+          "url": "https://www.medienzeit-elternblog.de/",
+          "beschreibung": "Alltagstaugliche Orientierung, Denkanstöße & Expertentipps aus dem Kinderschutz."
+        }
+      ]
+    },
+    {
+      "titel": "7. Sonstiges & hilfreiche Tools",
+      "links": [
+        {
+          "titel": "📌 Medienanstalt Hessen – Link-Tipps (Padlet)",
+          "url": "https://padlet.com/medienanstalt_hessen/link-tipps-fur-eltern-69w0pr3udr8ryyd1",
+          "beschreibung": "Themenseiten zu KI, Influencern, erstem Smartphone & mehr."
+        },
+        {
+          "titel": "🧠 Digitalcheck NRW",
+          "url": "https://www.digitalcheck.nrw/",
+          "beschreibung": "Kostenfreies Quiz zur Selbsteinschätzung der eigenen Medienkompetenz inkl. Weiterbildungstipps."
+        },
+        {
+          "titel": "❓ Frage? Wir antworten! (Medienanstalt NRW)",
+          "url": "https://www.medienanstalt-nrw.de/frageantwort.html",
+          "beschreibung": "Individuelle Antworten auf persönliche Fragen rund um Medienthemen."
+        }
+      ]
+    }
+  ]
+}

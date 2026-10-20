@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medienkompetenz für Grundschulkinder</title>
+  <style>
+    :root {
+      --bg: #f6f5f2;
+      --card: #ffffff;
+      --text: #2b2b2b;
+      --muted: #6b6b6b;
+      --accent: #3d6b5c;
+      --border: #e2e0da;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1b1d1c;
+        --card: #242726;
+        --text: #ececea;
+        --muted: #a5a7a5;
+        --accent: #7fb8a5;
+        --border: #3a3e3c;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+    header h1 {
+      font-size: 1.6rem;
+      margin: 0 0 12px;
+      color: var(--accent);
+    }
+    .bio p { margin: 0 0 12px; color: var(--text); }
+    section { margin-top: 32px; }
+    section h2 {
+      font-size: 1.15rem;
+      margin: 0 0 4px;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 6px;
+    }
+    .hinweis {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 8px 0 12px;
+      font-style: italic;
+    }
+    a.card {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 10px 0;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    a.card:hover, a.card:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      outline: none;
+    }
+    a.card strong { display: block; font-size: 1rem; }
+    a.card span { display: block; font-size: 0.9rem; color: var(--muted); margin-top: 4px; }
+    footer {
+      margin-top: 48px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    #fehler { color: #b00020; display: none; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1 id="titel">Medienkompetenz für Grundschulkinder</h1>
+    <div class="bio" id="bio"></div>
+  </header>
+
+  <div id="fehler">Die Links konnten nicht geladen werden. Bitte später erneut versuchen.</div>
+  <div id="kategorien"></div>
+
+  <footer>
+    Die Inhalte werden in der Datei <code>links.json</code> gepflegt.
+  </footer>
+</main>
+
+<script>
+  // Lädt die Inhalte aus links.json. Eine Änderung dort erscheint nach dem Speichern automatisch auf der Seite.
+  const ziel = document.getElementById('kategorien');
+
+  function el(tag, attrs = {}, text = '') {
+    const node = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
+    if (text) node.textContent = text;
+    return node;
+  }
+
+  fetch('links.json', { cache: 'no-cache' })
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(daten => {
+      document.getElementById('titel').textContent = daten.profil.titel;
+      document.title = daten.profil.titel;
+
+      const bio = document.getElementById('bio');
+      daten.profil.bio.forEach(absatz => bio.appendChild(el('p', {}, absatz)));
+
+      daten.kategorien.forEach(kat => {
+        const sec = el('section');
+        sec.appendChild(el('h2', {}, kat.titel));
+        if (kat.hinweis) sec.appendChild(el('p', { class: 'hinweis' }, kat.hinweis));
+
+        kat.links.forEach(link => {
+          const a = el('a', {
+            class: 'card',
+            href: link.url,
+            target: '_blank',
+            rel: 'noopener noreferrer'
+          });
+          a.appendChild(el('strong', {}, link.titel));
+          if (link.beschreibung) a.appendChild(el('span', {}, link.beschreibung));
+          sec.appendChild(a);
+        });
+
+        ziel.appendChild(sec);
+      });
+    })
+    .catch(() => {
+      document.getElementById('fehler').style.display = 'block';
+    });
+</script>
+</body>
+</html>
