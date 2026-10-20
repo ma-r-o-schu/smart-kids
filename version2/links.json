@@ -33,7 +33,6 @@
     },
     {
       "titel": "Informiert bleiben",
-      "untertitel": "Zur WhatsApp-Gruppe",
       "schritt": "informieren"
     }
   ],
@@ -183,6 +182,22 @@
           "url": "https://www.medienanstalt-nrw.de/frageantwort.html",
           "beschreibung": "Individuelle Antworten auf persönliche Fragen rund um Medienthemen.",
           "format": "beratung",
+          "alter": ["alle"],
+          "region": "NRW"
+        },
+        {
+          "titel": "Digitalcheck NRW: Wie fit bin ich in Medien?",
+          "url": "https://www.digitalcheck.nrw/checkup/question/0/1/1",
+          "beschreibung": "Kostenfreies Quiz zur Selbsteinschätzung der eigenen Medienkompetenz.",
+          "format": "tool",
+          "alter": ["alle"],
+          "region": "NRW"
+        },
+        {
+          "titel": "Medienanstalt NRW",
+          "url": "https://www.medienanstalt-nrw.de/",
+          "beschreibung": "Informationen und Angebote der Landesmedienanstalt rund um Medienthemen.",
+          "format": "text",
           "alter": ["alle"],
           "region": "NRW"
         }
