@@ -1,48 +1,75 @@
 # Eltern-Infoportal Medienkompetenz
 
-Eine einfache, kostenlose Linkseite (ähnlich Bio.link), die ohne Canva- oder Bio.link-Konto auskommt.
+Eine schlanke Linkseite für Eltern, die in vier Schritten durch das Thema führt. Kein Konto bei Canva oder Bio.link nötig.
 
 ## Dateien
 
-- `index.html` – die Seite. Muss in der Regel nicht verändert werden.
-- `links.json` – alle Texte, Kategorien und Links. Hier wird gepflegt.
-- `README.md` – diese Anleitung.
+- `index.html`: die Seite. Muss in der Regel nicht verändert werden.
+- `links.json`: alle Texte, Schritte und Links. Hier wird gepflegt.
+- `logo.svg`: das Logo.
+- `README.md`: diese Anleitung.
 
-## Inhalte ändern (ohne Programmierkenntnisse)
+## Aufbau der Seite
+
+1. **Startfragen:** drei Schaltflächen, die direkt zu einem Schritt springen.
+2. **Journey:** vier Schritte: Eltern informieren, Kind informieren, Einstellungen treffen, Begleiten und dranbleiben.
+3. **Altersfilter:** Eltern wählen „Vorschule“, „1./2. Klasse“ oder „3./4. Klasse“. Links für andere Altersgruppen werden ausgeblendet. Links mit „Alle“ bleiben immer sichtbar.
+4. **Fußbereich:** Stand, Kontakt und Impressum.
+
+## Inhalte ändern
 
 1. Auf GitHub die Datei `links.json` öffnen.
 2. Auf das Stift-Symbol (Edit) klicken.
-3. Text ändern oder einen Link ergänzen. Ein Link-Block sieht so aus:
+3. Text ändern oder einen Link ergänzen. Ein Link sieht so aus:
 
 ```json
 {
-  "titel": "🔗 Titel des Links",
+  "titel": "Titel des Links",
   "url": "https://www.beispiel.de/",
-  "beschreibung": "Kurze Erklärung für Eltern."
+  "beschreibung": "Ein Satz, was Eltern dort bekommen.",
+  "format": "text",
+  "alter": ["alle"],
+  "region": "bundesweit"
 }
 ```
 
-Achtung: Zwischen den Blöcken steht ein Komma, der letzte Block einer Liste hat keines. Die Anführungszeichen `"` bleiben stehen.
+**Erlaubte Werte:**
+
+- `format`: `text`, `video`, `audio`, `pdf`, `buch`, `tool`, `beratung`
+- `alter`: `"alle"`, `"vorschule"`, `"1-2"`, `"3-4"`. Mehrere Werte sind möglich, z. B. `["1-2", "3-4"]`.
+- `region`: `"bundesweit"` oder ein Bundesland, z. B. `"Bayern"`. Nicht-bundesweite Angebote zeigen den Hinweis „Nur Bayern“ an.
+
+**Achtung:** Zwischen zwei Links steht ein Komma, beim letzten Link der Liste nicht. Anführungszeichen `"` bleiben erhalten.
 
 4. Unten auf **Commit changes** klicken. Nach ein bis zwei Minuten ist die Änderung online.
 
+**Pflege:** Bitte beim Ändern auch `zuletzt_aktualisiert` im Abschnitt `profil` auf den aktuellen Monat setzen.
+
+## Kontakt und Impressum
+
+Im Abschnitt `profil` gibt es zwei Felder:
+
+- `kontakt`: eine E-Mail-Adresse, damit Eltern tote Links oder Fehler melden können.
+- `impressum_url`: Link zu einer Impressum-Seite, z. B. der Schulwebsite.
+
+Leere Felder werden nicht angezeigt. Ob für das Angebot ein Impressum nötig ist, bitte mit der Schule oder dem Träger klären.
+
 ## Einmalige Veröffentlichung auf GitHub Pages
 
-1. Auf github.com ein kostenloses Konto anlegen oder einloggen.
-2. Oben rechts auf **+** → **New repository** klicken. Name z. B. `eltern-infoportal`, Sichtbarkeit **Public**.
-3. Auf **uploading an existing file** klicken und die Dateien `index.html`, `links.json` und `README.md` hochladen. Dann **Commit changes**.
-4. Im Repository auf **Settings** → **Pages** gehen. Unter **Build and deployment** als Quelle **Deploy from a branch**, Branch **main**, Ordner **/ (root)** wählen und speichern.
-5. Nach kurzer Zeit erscheint die Adresse `https://<benutzername>.github.io/eltern-infoportal/`. Diese Adresse kann an Eltern verteilt werden.
+1. Auf github.com ein Repository `eltern-infoportal` anlegen (Public).
+2. Alle Dateien hochladen und **Commit changes** klicken.
+3. Unter **Settings → Pages** bei **Source** die Option **Deploy from a branch** wählen, Branch `main`, Ordner `/ (root)`, dann **Save**.
+4. Die Adresse steht danach oben auf der Pages-Seite, z. B. `https://<benutzername>.github.io/eltern-infoportal/`.
 
-## Andere Personen als Administratoren hinzufügen
+## Weitere Administratoren hinzufügen
 
-1. Im Repository auf **Settings** → **Collaborators** (bzw. **Collaborators and teams**) gehen.
-2. **Add people** klicken und das GitHub-Konto der Person eingeben.
-3. Die Person erhält eine Einladung und kann danach `links.json` direkt bearbeiten, wie oben beschrieben.
+1. Im Repository auf **Settings → Collaborators** gehen.
+2. **Add people** klicken und das GitHub-Konto der Person eintragen.
+3. Die Person kann danach `links.json` direkt bearbeiten.
 
-## Hinweise
+## Vor jeder Veröffentlichung prüfen
 
-- Vor dem Veröffentlichen die Links einmal selbst anklicken, da Webseiten sich ändern.
-- Die Bio und der Profil-Titel stehen am Anfang der Datei `links.json` unter `profil`.
-- Die Seite funktioniert auf dem Smartphone und im Dunkelmodus.
-- Lokal im Browser per Doppelklick geöffnet, zeigt die Seite wegen einer Browser-Sperre keine Links an. Sie funktioniert erst über die GitHub-Pages-Adresse oder einen kleinen lokalen Server.
+- Jeden Link einmal selbst anklicken.
+- Die Seite auf dem Smartphone öffnen.
+- Die Altersangaben und Regionen stimmen lassen.
+- Lokal per Doppelklick zeigt die Seite keine Links an. Die Vorschau funktioniert erst über die GitHub-Pages-Adresse.
