@@ -1,8 +1,8 @@
 {
   "profil": {
-    "titel": "Erst Kindheit, dann Phone – und erst Smart, dann Phone. Ein eigenes Smartphone sollte eine bewusste Entscheidung sein – dabei wollen wir unterstützen",
+    "titel": "Medienkompetenz für Grundschulkinder",
     "bio": [
-      "Schön, dass Sie sich für digitale Medien im Leben Ihres Kindes interessieren. Hier finden Sie in wenigen Schritten, was Sie wissen und tun können."
+      "Erst Kindheit, dann Phone – und erst Smart, dann Phone. Ein eigenes Smartphone sollte eine bewusste Entscheidung sein – dabei wollen wir unterstützen."
     ],
     "version2_titel": "Zurück zur Hauptseite",
     "version2_url": "../",
@@ -10,6 +10,33 @@
     "kontakt": "",
     "impressum_url": ""
   },
+  "navigation": [
+    {
+      "titel": "Informationen für Eltern",
+      "untertitel": "Was muss ich selbst wissen?",
+      "schritt": "eltern"
+    },
+    {
+      "titel": "Mit den Kindern sprechen",
+      "untertitel": "Wie spreche ich mit den Kindern darüber?",
+      "schritt": "kind"
+    },
+    {
+      "titel": "Was tun?",
+      "untertitel": "Ab wann ein Smartphone und welche Regeln?",
+      "schritt": "einstellungen"
+    },
+    {
+      "titel": "Dranbleiben",
+      "untertitel": "Weiterlesen und Hilfe finden",
+      "schritt": "begleiten"
+    },
+    {
+      "titel": "Informiert bleiben",
+      "untertitel": "Zur WhatsApp-Gruppe",
+      "url": "https://chat.whatsapp.com/BAF5rT90Gmq4aamqkPCxzQ"
+    }
+  ],
   "video": {
     "titel": "Video-Tipp für Eltern",
     "embed_id": ""
@@ -36,26 +63,20 @@
       "url": "https://www.medienanstalt-nrw.de/fileadmin/user_upload/Forschung/Pornografie_Sexting/2025_LFM-NRW_Studie_Erfahrungen-von-Kindern-und-Jugendlichen-mit-Pornografie-und-Sexting.pdf"
     }
   ],
-  "start_fragen": [
-    {
-      "frage": "Was muss ich selbst wissen?",
-      "schritt": "eltern"
-    },
-    {
-      "frage": "Wie spreche ich mit meinem Kind darüber?",
-      "schritt": "kind"
-    },
-    {
-      "frage": "Ab wann ein Smartphone, und welche Regeln?",
-      "schritt": "einstellungen"
-    }
-  ],
   "schritte": [
     {
       "id": "eltern",
       "titel": "Informationen für Eltern",
       "einleitung": "Verschaffen Sie sich zuerst einen Überblick, bevor Sie Regeln festlegen.",
       "links": [
+        {
+          "titel": "Video: Medienerziehung für Eltern",
+          "url": "https://www.youtube.com/watch?v=MRrPbNLhEuQ&t=11s",
+          "beschreibung": "Ein Video zum Einstieg in das Thema.",
+          "format": "video",
+          "alter": ["alle"],
+          "region": "bundesweit"
+        },
         {
           "titel": "Gespräch mit Digitaltrainer Daniel Wolff",
           "url": "https://koerber-stiftung.de/mediathek/unterschaetzen-eltern-digitale-risiken-daniel-wolff-ueber-medienerziehung-in-zeiten-von-ki-und-social-media/",
@@ -76,7 +97,7 @@
     },
     {
       "id": "kind",
-      "titel": "Mit den Kids sprechen",
+      "titel": "Mit den Kindern sprechen",
       "einleitung": "Erklären Sie Ihrem Kind die Regeln im Netz, möglichst gemeinsam und Schritt für Schritt.",
       "links": [
         {
@@ -84,7 +105,7 @@
           "url": "https://www.internet-abc.de/surfschein/",
           "beschreibung": "Für Kinder, die schon lesen können. Am besten die Lernmodule gemeinsam durchgehen.",
           "format": "tool",
-          "alter": ["1-2", "3-4"],
+          "alter": ["alle"],
           "region": "bundesweit"
         },
         {
@@ -92,7 +113,7 @@
           "url": "https://tessloff.com/was-ist-was-handy/",
           "beschreibung": "Kindgerechtes Sachbuch, das die Funktionen des Smartphones erklärt.",
           "format": "buch",
-          "alter": ["1-2", "3-4"],
+          "alter": ["alle"],
           "region": "bundesweit"
         },
         {
@@ -107,7 +128,7 @@
     },
     {
       "id": "einstellungen",
-      "titel": "Was tun",
+      "titel": "Was tun?",
       "einleitung": "Legen Sie fest, ob und wann ein Smartphone passt, und vereinbaren Sie klare Regeln.",
       "links": [
         {
@@ -164,21 +185,6 @@
           "format": "beratung",
           "alter": ["alle"],
           "region": "NRW"
-        }
-      ]
-    },
-    {
-      "id": "community",
-      "titel": "Link zur Community",
-      "einleitung": "Tauschen Sie sich mit anderen Eltern aus.",
-      "links": [
-        {
-          "titel": "Zur WhatsApp-Community",
-          "url": "",
-          "beschreibung": "Austausch mit anderen Eltern. Der Link wird hier eingetragen, sobald die Community steht.",
-          "format": "beratung",
-          "alter": ["alle"],
-          "region": "bundesweit"
         }
       ]
     }
