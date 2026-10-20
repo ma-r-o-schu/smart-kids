@@ -34,8 +34,7 @@
     {
       "titel": "Informiert bleiben",
       "untertitel": "Zur WhatsApp-Gruppe",
-      "schritt": "informationen"
-     
+      "schritt": "informieren"
     }
   ],
   "video": {
@@ -70,7 +69,6 @@
       "titel": "Informationen für Eltern",
       "einleitung": "Verschaffen Sie sich zuerst einen Überblick, bevor Sie Regeln festlegen.",
       "links": [
-        
         {
           "titel": "Gespräch mit Digitaltrainer Daniel Wolff",
           "url": "https://koerber-stiftung.de/mediathek/unterschaetzen-eltern-digitale-risiken-daniel-wolff-ueber-medienerziehung-in-zeiten-von-ki-und-social-media/",
@@ -86,7 +84,7 @@
           "format": "text",
           "alter": ["alle"],
           "region": "bundesweit"
-        }
+        },
         {
           "titel": "Video: Von der digitalen Demenz zur Smartphone-Pandemie",
           "url": "https://www.youtube.com/watch?v=MRrPbNLhEuQ&t=11s",
@@ -94,7 +92,7 @@
           "format": "video",
           "alter": ["alle"],
           "region": "bundesweit"
-        },
+        }
       ]
     },
     {
@@ -190,19 +188,20 @@
         }
       ]
     },
-     {
+    {
       "id": "informieren",
       "titel": "Informiert bleiben",
       "einleitung": "Weiterführende Links",
       "links": [
         {
-          "titel": "What's App Gruppe",
-           "url": "https://chat.whatsapp.com/BAF5rT90Gmq4aamqkPCxzQ",
-          "beschreibung": "Hier werden akutelle Links gepostet",
+          "titel": "WhatsApp-Gruppe",
+          "url": "https://chat.whatsapp.com/BAF5rT90Gmq4aamqkPCxzQ",
+          "beschreibung": "Hier werden aktuelle Links gepostet.",
           "format": "text",
           "alter": ["alle"],
           "region": "bundesweit"
-        },
-        
+        }
+      ]
+    }
   ]
 }
