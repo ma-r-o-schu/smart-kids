@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Logo Medienkompetenz für Grundschulkinder">
+  <!-- Hintergrund: blaues Rundquadrat -->
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#2f5d8a"/>
+  <!-- Aufgehende Sonne: Kindheit -->
+  <circle cx="60" cy="58" r="22" fill="#f08a3e"/>
+  <!-- Horizont -->
+  <rect x="26" y="58" width="68" height="4" rx="2" fill="#fbf8f4"/>
+  <!-- Buch: Lernen -->
+  <path d="M28 70 Q44 64 60 70 Q76 64 92 70 L92 90 Q76 84 60 90 Q44 84 28 90 Z" fill="#fbf8f4"/>
+  <line x1="60" y1="70" x2="60" y2="90" stroke="#2f5d8a" stroke-width="2.5"/>
+</svg>
