@@ -72,6 +72,9 @@
 
     /* Fakten-Ticker */
     .fakten {
+      touch-action: pan-y;
+      user-select: none;
+      cursor: grab;
       margin-top: 22px;
       padding: 18px 20px;
       background: var(--blue);
@@ -226,7 +229,7 @@
 
   <div class="bio" id="bio"></div>
 
-  <section class="fakten" id="fakten-box" aria-labelledby="fakten-kopf-titel" hidden>
+  <section class="fakten" id="fakten-box" aria-labelledby="fakten-kopf-titel" tabindex="0" hidden>
     <div class="fakten-kopf">
       <span id="fakten-kopf-titel">Wussten Sie schon?</span>
       <button type="button" id="fakten-weiter">Nächster Fakt</button>
@@ -268,7 +271,7 @@
     '1-2': '1./2. Klasse',
     '3-4': '3./4. Klasse'
   };
-  const FAKT_INTERVALL_MS = 9000;
+  const FAKT_INTERVALL_MS = 7000;
 
   function el(tag, attrs = {}, text = '') {
     const node = document.createElement(tag);
@@ -300,20 +303,50 @@
       [...punkteEl.children].forEach((p, n) => p.classList.toggle('aktiv', n === index));
     }
 
-    document.getElementById('fakten-weiter').addEventListener('click', () => {
-      zeige((index + 1) % fakten.length);
+    const n = fakten.length;
+    let timer = null;
+
+    // Automatischer Wechsel nach FAKT_INTERVALL_MS. Der Timer startet nach jeder manuellen Aktion neu.
+    function starteTimer() {
+      clearInterval(timer);
+      if (n > 1) {
+        timer = setInterval(() => {
+          if (!pausiert) zeige((index + 1) % n);
+        }, FAKT_INTERVALL_MS);
+      }
+    }
+
+    function weiter(richtung) {
+      zeige((index + richtung + n) % n);
+      starteTimer();
+    }
+
+    document.getElementById('fakten-weiter').addEventListener('click', () => weiter(1));
+
+    // Wischen (Maus, Touch, Stift): nach links = nächster Fakt, nach rechts = vorheriger.
+    let startX = null;
+    box.addEventListener('pointerdown', e => { startX = e.clientX; });
+    box.addEventListener('pointerup', e => {
+      if (startX === null) return;
+      const dx = e.clientX - startX;
+      startX = null;
+      if (Math.abs(dx) > 40) weiter(dx < 0 ? 1 : -1);
     });
+    box.addEventListener('pointercancel', () => { startX = null; });
+
+    // Tastatur: Pfeiltasten, wenn der Ticker den Fokus hat
+    box.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') weiter(1);
+      if (e.key === 'ArrowLeft') weiter(-1);
+    });
+
     box.addEventListener('mouseenter', () => pausiert = true);
     box.addEventListener('mouseleave', () => pausiert = false);
     box.addEventListener('focusin', () => pausiert = true);
     box.addEventListener('focusout', () => pausiert = false);
 
     zeige(0);
-    if (fakten.length > 1) {
-      setInterval(() => {
-        if (!pausiert) zeige((index + 1) % fakten.length);
-      }, FAKT_INTERVALL_MS);
-    }
+    starteTimer();
   }
 
   function aufbauen(daten) {
