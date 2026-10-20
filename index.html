@@ -90,11 +90,25 @@
       text-align: center;
     }
     #fehler { color: #b3261e; display: none; }
+    .version2 {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 12px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--orange);
+      border: 1px solid var(--orange);
+      border-radius: 999px;
+      text-decoration: none;
+    }
+    .version2:hover, .version2:focus-visible { background: var(--orange); color: #fff; outline: none; }
+    .version2[hidden] { display: none; }
     @media (prefers-reduced-motion: reduce) { a.card { transition: none; } }
   </style>
 </head>
 <body>
 <main>
+  <a class="version2" id="version2" href="#" hidden></a>
   <header>
     <img src="logo.svg" alt="Logo Medienkompetenz für Grundschulkinder">
     <h1 id="titel">Medienkompetenz für Grundschulkinder</h1>
@@ -130,6 +144,13 @@
 
       const bio = document.getElementById('bio');
       daten.profil.bio.forEach(absatz => bio.appendChild(el('p', {}, absatz)));
+
+      if (daten.profil.version2_url) {
+        const v2 = document.getElementById('version2');
+        v2.href = daten.profil.version2_url;
+        v2.textContent = daten.profil.version2_titel || 'Zur Version 2';
+        v2.hidden = false;
+      }
 
       daten.kategorien.forEach(kat => {
         const sec = el('section');
