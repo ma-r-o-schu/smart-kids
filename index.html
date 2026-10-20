@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Überblick für Eltern: Medienkompetenz für Grundschulkinder in vier Schritten.">
+  <meta name="description" content="Infos zur Medienkompetenz für Grundschulkinder: Basiswissen, Entscheidungshilfen und Ratgeber für Eltern.">
   <link rel="icon" href="logo.svg" type="image/svg+xml">
   <title>Medienkompetenz für Grundschulkinder</title>
   <style>
@@ -30,7 +30,6 @@
       }
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -38,15 +37,13 @@
       color: var(--text);
       line-height: 1.55;
     }
-    main { max-width: 640px; margin: 0 auto; padding: 28px 18px 64px; }
-
+    main { max-width: 640px; margin: 0 auto; padding: 32px 18px 64px; }
     header { display: flex; align-items: center; gap: 16px; }
-    header img { width: 68px; height: 68px; flex: none; }
-    header h1 { font-size: 1.45rem; line-height: 1.25; margin: 0; color: var(--blue); }
-
+    header img { width: 72px; height: 72px; flex: none; }
+    header h1 { font-size: 1.5rem; line-height: 1.25; margin: 0; color: var(--blue); }
     .bio {
-      margin-top: 18px;
-      padding: 16px 20px;
+      margin-top: 20px;
+      padding: 18px 20px;
       background: var(--card);
       border-radius: 14px;
       border-left: 4px solid var(--orange);
@@ -54,133 +51,20 @@
     }
     .bio p { margin: 0 0 10px; }
     .bio p:last-child { margin-bottom: 0; }
-
-    /* Link zur Alternativversion (oben) */
-    .version2 {
-      display: inline-block;
-      margin-bottom: 14px;
-      padding: 6px 12px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--orange);
-      border: 1px solid var(--orange);
-      border-radius: 999px;
-      text-decoration: none;
-    }
-    .version2:hover, .version2:focus-visible { background: var(--orange); color: #fff; outline: none; }
-    .version2[hidden] { display: none; }
-
-    /* Fakten-Ticker */
-    .fakten {
-      margin-top: 22px;
-      padding: 18px 20px;
-      background: var(--blue);
-      color: #fff;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px var(--shadow);
-    }
-    .fakten-kopf {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      opacity: 0.9;
-      margin-bottom: 8px;
-    }
-    .fakten-kopf button {
-      font: inherit;
-      font-size: 0.78rem;
-      color: #fff;
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.6);
-      border-radius: 999px;
-      padding: 4px 10px;
-      cursor: pointer;
-    }
-    .fakten-kopf button:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
-    .fakt-text { margin: 0; font-size: 1.05rem; font-weight: 600; min-height: 4.6em; }
-    .fakt-quelle { margin: 10px 0 0; font-size: 0.82rem; opacity: 0.9; }
-    .fakt-quelle a { color: #fff; text-decoration: underline; }
-    .fakt-punkte { display: flex; gap: 6px; margin-top: 12px; }
-    .fakt-punkte span { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); }
-    .fakt-punkte span.aktiv { background: var(--orange); }
-
-    /* Startbereich */
-    .start { margin-top: 26px; }
-    .start h2 { font-size: 1rem; margin: 0 0 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
-    .fragen { display: grid; gap: 10px; }
-    .fragen a {
+    section { margin-top: 36px; }
+    section h2 { font-size: 1.1rem; margin: 0 0 6px; color: var(--blue); }
+    section:nth-of-type(even) h2 { color: var(--orange); }
+    section h2::after {
+      content: "";
       display: block;
-      padding: 14px 16px;
-      background: var(--card);
-      color: var(--blue);
-      border: 2px solid var(--blue);
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .fragen a:hover, .fragen a:focus-visible { background: var(--blue); color: #fff; outline: none; }
-    .community {
-      display: block;
-      margin-top: 14px;
-      padding: 14px 16px;
-      text-align: center;
+      width: 48px;
+      height: 3px;
+      margin-top: 6px;
+      border-radius: 2px;
       background: var(--orange);
-      color: #fff;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
     }
-    .community:hover, .community:focus-visible { filter: brightness(1.05); outline: none; }
-    .community[hidden] { display: none; }
-
-    /* Journey-Leiste */
-    .journey { display: flex; gap: 6px; margin: 28px 0 0; padding: 0; list-style: none; counter-reset: schritt; }
-    .journey li { flex: 1; counter-increment: schritt; }
-    .journey a {
-      display: block;
-      text-align: center;
-      padding: 10px 4px;
-      font-size: 0.8rem;
-      line-height: 1.25;
-      color: var(--text);
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      text-decoration: none;
-    }
-    .journey a::before {
-      content: counter(schritt);
-      display: block;
-      font-weight: 700;
-      color: var(--orange);
-      font-size: 1rem;
-    }
-    .journey a:hover, .journey a:focus-visible { border-color: var(--orange); outline: none; }
-
-    /* Altersfilter */
-    .filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 0; }
-    .filter button {
-      font: inherit;
-      font-size: 0.9rem;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--blue);
-      background: transparent;
-      color: var(--blue);
-      cursor: pointer;
-    }
-    .filter button[aria-pressed="true"] { background: var(--blue); color: #fff; }
-    .filter button:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
-
-    /* Schritte */
-    section.schritt { margin-top: 36px; scroll-margin-top: 16px; }
-    section.schritt h2 { font-size: 1.15rem; margin: 0; color: var(--blue); }
-    section.schritt h2 span { color: var(--orange); margin-right: 6px; }
-    .einleitung { margin: 6px 0 0; font-size: 0.93rem; color: var(--muted); }
-
+    section:nth-of-type(even) h2::after { background: var(--blue); }
+    .hinweis { font-size: 0.92rem; color: var(--muted); margin: 10px 0 0; font-style: italic; }
     a.card {
       display: block;
       background: var(--card);
@@ -193,13 +77,10 @@
       color: var(--text);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
+    section:nth-of-type(even) a.card { border-left-color: var(--orange); }
     a.card:hover, a.card:focus-visible { transform: translateY(-2px); box-shadow: 0 6px 16px var(--shadow); outline: none; }
-    a.card .format { display: inline-block; font-size: 0.75rem; color: var(--orange); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
     a.card strong { display: block; font-size: 1rem; }
-    a.card span.beschr { display: block; font-size: 0.9rem; color: var(--muted); margin-top: 4px; }
-    a.card .region { display: inline-block; font-size: 0.75rem; color: var(--muted); margin-top: 6px; }
-    a.card[hidden], section.schritt[hidden] { display: none; }
-
+    a.card span { display: block; font-size: 0.9rem; color: var(--muted); margin-top: 4px; }
     footer {
       margin-top: 52px;
       padding-top: 18px;
@@ -208,17 +89,12 @@
       color: var(--muted);
       text-align: center;
     }
-    footer a { color: var(--muted); }
     #fehler { color: #b3261e; display: none; }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      a.card { transition: none; }
-    }
+    @media (prefers-reduced-motion: reduce) { a.card { transition: none; } }
   </style>
 </head>
 <body>
 <main>
-  <a class="version2" id="version2" href="#" hidden></a>
   <header>
     <img src="logo.svg" alt="Logo Medienkompetenz für Grundschulkinder">
     <h1 id="titel">Medienkompetenz für Grundschulkinder</h1>
@@ -226,49 +102,15 @@
 
   <div class="bio" id="bio"></div>
 
-  <section class="fakten" id="fakten-box" aria-labelledby="fakten-kopf-titel" hidden>
-    <div class="fakten-kopf">
-      <span id="fakten-kopf-titel">Wussten Sie schon?</span>
-      <button type="button" id="fakten-weiter">Nächster Fakt</button>
-    </div>
-    <p class="fakt-text" id="fakt-text" aria-live="polite"></p>
-    <p class="fakt-quelle" id="fakt-quelle"></p>
-    <div class="fakt-punkte" id="fakt-punkte" aria-hidden="true"></div>
-  </section>
+  <div id="fehler">Die Links konnten nicht geladen werden. Bitte später erneut versuchen.</div>
+  <div id="kategorien"></div>
 
-  <nav class="start" aria-labelledby="start-titel">
-    <h2 id="start-titel">Was möchten Sie wissen?</h2>
-    <div class="fragen" id="fragen"></div>
-    <a class="community" id="community" href="#" target="_blank" rel="noopener noreferrer" hidden></a>
-  </nav>
-
-  <ol class="journey" id="journey" aria-label="Die vier Schritte"></ol>
-
-  <div class="filter" id="filter" role="group" aria-label="Nach Alter filtern"></div>
-
-  <div id="fehler">Die Inhalte konnten nicht geladen werden. Bitte später erneut versuchen.</div>
-  <div id="schritte"></div>
-
-  <footer>
-    <p>Zuletzt aktualisiert: <span id="stand"></span></p>
-    <p id="kontakt"></p>
-    <p id="impressum"></p>
-  </footer>
+  <footer>Inhalte werden in der Datei <code>links.json</code> gepflegt.</footer>
 </main>
 
 <script>
-  // Alle Inhalte stehen in links.json. Änderungen dort erscheinen nach dem Speichern automatisch.
-  const FORMAT_LABEL = {
-    text: 'Text', video: 'Video', audio: 'Audio', pdf: 'PDF',
-    buch: 'Buch', tool: 'Tool', beratung: 'Beratung'
-  };
-  const ALTER_LABEL = {
-    'alle': 'Alle',
-    'vorschule': 'Vorschule',
-    '1-2': '1./2. Klasse',
-    '3-4': '3./4. Klasse'
-  };
-  const FAKT_INTERVALL_MS = 9000;
+  // Lädt die Inhalte aus links.json.
+  const ziel = document.getElementById('kategorien');
 
   function el(tag, attrs = {}, text = '') {
     const node = document.createElement(tag);
@@ -277,152 +119,31 @@
     return node;
   }
 
-  // Fakten-Ticker: wechselt automatisch, pausiert bei Mausberührung und Fokus, lässt sich weiterschalten.
-  function starteFakten(fakten) {
-    const box = document.getElementById('fakten-box');
-    if (!fakten || fakten.length === 0) return;
-    box.hidden = false;
-
-    const textEl = document.getElementById('fakt-text');
-    const quelleEl = document.getElementById('fakt-quelle');
-    const punkteEl = document.getElementById('fakt-punkte');
-    let index = 0;
-    let pausiert = false;
-
-    fakten.forEach(() => punkteEl.appendChild(el('span')));
-
-    function zeige(i) {
-      index = i;
-      const f = fakten[index];
-      textEl.textContent = f.text;
-      quelleEl.textContent = 'Quelle: ';
-      quelleEl.appendChild(el('a', { href: f.url, target: '_blank', rel: 'noopener noreferrer' }, f.quelle));
-      [...punkteEl.children].forEach((p, n) => p.classList.toggle('aktiv', n === index));
-    }
-
-    document.getElementById('fakten-weiter').addEventListener('click', () => {
-      zeige((index + 1) % fakten.length);
-    });
-    box.addEventListener('mouseenter', () => pausiert = true);
-    box.addEventListener('mouseleave', () => pausiert = false);
-    box.addEventListener('focusin', () => pausiert = true);
-    box.addEventListener('focusout', () => pausiert = false);
-
-    zeige(0);
-    if (fakten.length > 1) {
-      setInterval(() => {
-        if (!pausiert) zeige((index + 1) % fakten.length);
-      }, FAKT_INTERVALL_MS);
-    }
-  }
-
-  function aufbauen(daten) {
-    document.getElementById('titel').textContent = daten.profil.titel;
-    document.title = daten.profil.titel;
-
-    const bio = document.getElementById('bio');
-    daten.profil.bio.forEach(absatz => bio.appendChild(el('p', {}, absatz)));
-
-    starteFakten(daten.fakten);
-
-    // Link zur Version 2: nur anzeigen, wenn eine Adresse eingetragen ist
-    if (daten.profil.version2_url) {
-      const v2 = document.getElementById('version2');
-      v2.href = daten.profil.version2_url;
-      v2.textContent = daten.profil.version2_titel || 'Zur Version 2';
-      v2.hidden = false;
-    }
-
-    // Startfragen
-    const fragen = document.getElementById('fragen');
-    daten.start_fragen.forEach(f => {
-      fragen.appendChild(el('a', { href: '#schritt-' + f.schritt }, f.frage));
-    });
-
-    // WhatsApp-Community: nur anzeigen, wenn ein Link eingetragen ist
-    if (daten.profil.whatsapp_url) {
-      const c = document.getElementById('community');
-      c.href = daten.profil.whatsapp_url;
-      c.textContent = daten.profil.whatsapp_titel || 'Zur WhatsApp-Community';
-      c.hidden = false;
-    }
-
-    // Journey-Leiste
-    const journey = document.getElementById('journey');
-    daten.schritte.forEach(s => {
-      const li = el('li');
-      li.appendChild(el('a', { href: '#schritt-' + s.id }, s.titel));
-      journey.appendChild(li);
-    });
-
-    // Altersfilter: nur Alter anbieten, das tatsächlich vorkommt
-    const alterWerte = new Set(['alle']);
-    daten.schritte.forEach(s => s.links.forEach(l => l.alter.forEach(a => alterWerte.add(a))));
-    const filter = document.getElementById('filter');
-    const buttons = [];
-    ['alle', 'vorschule', '1-2', '3-4'].filter(a => alterWerte.has(a)).forEach(a => {
-      const b = el('button', { type: 'button', 'aria-pressed': a === 'alle' ? 'true' : 'false', 'data-alter': a }, ALTER_LABEL[a]);
-      filter.appendChild(b);
-      buttons.push(b);
-    });
-
-    // Schritte und Karten
-    const ziel = document.getElementById('schritte');
-    daten.schritte.forEach((s, index) => {
-      const sec = el('section', { class: 'schritt', id: 'schritt-' + s.id });
-      const h2 = el('h2');
-      h2.append(el('span', {}, String(index + 1)), s.titel);
-      sec.appendChild(h2);
-      sec.appendChild(el('p', { class: 'einleitung' }, s.einleitung));
-
-      s.links.forEach(link => {
-        const a = el('a', {
-          class: 'card',
-          href: link.url,
-          target: '_blank',
-          rel: 'noopener noreferrer'
-        });
-        a.dataset.alter = link.alter.join(' ');
-        a.appendChild(el('span', { class: 'format' }, FORMAT_LABEL[link.format] || link.format));
-        a.appendChild(el('strong', {}, link.titel));
-        if (link.beschreibung) a.appendChild(el('span', { class: 'beschr' }, link.beschreibung));
-        if (link.region && link.region !== 'bundesweit') a.appendChild(el('span', { class: 'region' }, 'Nur ' + link.region));
-        sec.appendChild(a);
-      });
-      ziel.appendChild(sec);
-    });
-
-    // Filterlogik
-    buttons.forEach(b => b.addEventListener('click', () => {
-      const wahl = b.dataset.alter;
-      buttons.forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
-      document.querySelectorAll('a.card').forEach(card => {
-        const alter = card.dataset.alter.split(' ');
-        const passt = wahl === 'alle' || alter.includes('alle') || alter.includes(wahl);
-        card.hidden = !passt;
-      });
-      document.querySelectorAll('section.schritt').forEach(sec => {
-        const sichtbar = sec.querySelectorAll('a.card:not([hidden])').length > 0;
-        sec.hidden = !sichtbar;
-      });
-    }));
-
-    // Fußbereich
-    document.getElementById('stand').textContent = daten.profil.zuletzt_aktualisiert || '';
-    if (daten.profil.kontakt) {
-      document.getElementById('kontakt').textContent = 'Kontakt: ' + daten.profil.kontakt;
-    }
-    if (daten.profil.impressum_url) {
-      document.getElementById('impressum').appendChild(el('a', { href: daten.profil.impressum_url }, 'Impressum'));
-    }
-  }
-
   fetch('links.json', { cache: 'no-cache' })
     .then(r => {
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.json();
     })
-    .then(aufbauen)
+    .then(daten => {
+      document.getElementById('titel').textContent = daten.profil.titel;
+      document.title = daten.profil.titel;
+
+      const bio = document.getElementById('bio');
+      daten.profil.bio.forEach(absatz => bio.appendChild(el('p', {}, absatz)));
+
+      daten.kategorien.forEach(kat => {
+        const sec = el('section');
+        sec.appendChild(el('h2', {}, kat.titel));
+        if (kat.hinweis) sec.appendChild(el('p', { class: 'hinweis' }, kat.hinweis));
+        kat.links.forEach(link => {
+          const a = el('a', { class: 'card', href: link.url, target: '_blank', rel: 'noopener noreferrer' });
+          a.appendChild(el('strong', {}, link.titel));
+          if (link.beschreibung) a.appendChild(el('span', {}, link.beschreibung));
+          sec.appendChild(a);
+        });
+        ziel.appendChild(sec);
+      });
+    })
     .catch(() => {
       document.getElementById('fehler').style.display = 'block';
     });

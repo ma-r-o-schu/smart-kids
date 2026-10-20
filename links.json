@@ -2,167 +2,130 @@
   "profil": {
     "titel": "Medienkompetenz für Grundschulkinder",
     "bio": [
-      "Schön, dass Sie sich für digitale Medien im Leben Ihres Kindes interessieren. Diese Seite führt Sie in vier Schritten durch das Thema: von der eigenen Orientierung über Gespräche mit dem Kind bis zu passenden Einstellungen und Regeln.",
-      "Unser Motto: Erst Kindheit, dann Phone – und erst Smart, dann Phone. Ein eigenes Smartphone sollte eine bewusste Entscheidung sein, nicht nur, weil „alle es so machen“."
-    ],
-    "whatsapp_titel": "Zur WhatsApp-Community",
-    "version2_titel": "Zur Version 2",
-    "version2_url": "version2/",
-    "whatsapp_url": "",
-    "zuletzt_aktualisiert": "Oktober 2026",
-    "kontakt": "",
-    "impressum_url": ""
+      "Hallo zusammen! Schön, dass Ihr Euch für das Thema digitale Medien für Grundschulkinder interessiert. Hier erhaltet Ihr Infos zu Medienerziehung, -kompetenz und Infoabenden für Eltern.",
+      "Unser Motto: Ganz nach der Elterninitiative „Smarter Start“: Erst Kindheit, dann Phone – und erst Smart, dann Phone.",
+      "Wie beim Schwimmen oder im Straßenverkehr müssen wir unsere Kinder in der digitalen Welt begleiten. Ein eigenes Smartphone sollte eine bewusste Entscheidung sein – nicht nur, weil „alle es so machen“."
+    ]
   },
-  "fakten": [
+  "kategorien": [
     {
-      "text": "46 % der 6- bis 13-Jährigen besitzen ein eigenes Smartphone. Bei den 6- bis 7-Jährigen sind es 11 %, bei den 8- bis 9-Jährigen 33 %.",
-      "quelle": "KIM-Studie 2024 (mpfs), S. 7–8",
-      "url": "https://www.pit.sachsen.de/download/KIM-Studie-2024.pdf"
-    },
-    {
-      "text": "47 % der 11- bis 17-Jährigen haben schon einmal Pornos gesehen. Im Jahr 2023 waren es 35 %.",
-      "quelle": "LfM NRW, Studie 2025 (Befragung September/Oktober 2025, n = 2.976)",
-      "url": "https://www.medienanstalt-nrw.de/fileadmin/user_upload/Forschung/Pornografie_Sexting/2025_LFM-NRW_Studie_Erfahrungen-von-Kindern-und-Jugendlichen-mit-Pornografie-und-Sexting.pdf"
-    },
-    {
-      "text": "31 % der 11- bis 17-Jährigen haben schon sexuelle Nachrichten oder Nacktbilder erhalten. Im Jahr 2023 waren es 21 %.",
-      "quelle": "LfM NRW, Studie 2025 (Frage 11)",
-      "url": "https://www.medienanstalt-nrw.de/fileadmin/user_upload/Forschung/Pornografie_Sexting/2025_LFM-NRW_Studie_Erfahrungen-von-Kindern-und-Jugendlichen-mit-Pornografie-und-Sexting.pdf"
-    },
-    {
-      "text": "Der erste Kontakt mit Pornos liegt laut der LfM-Studie meist zwischen 12 und 14 Jahren.",
-      "quelle": "LfM NRW, Studie 2025 (Frage 2)",
-      "url": "https://www.medienanstalt-nrw.de/fileadmin/user_upload/Forschung/Pornografie_Sexting/2025_LFM-NRW_Studie_Erfahrungen-von-Kindern-und-Jugendlichen-mit-Pornografie-und-Sexting.pdf"
-    }
-  ],
-  "start_fragen": [
-    {
-      "frage": "Was muss ich selbst wissen?",
-      "schritt": "eltern"
-    },
-    {
-      "frage": "Wie spreche ich mit meinem Kind darüber?",
-      "schritt": "kind"
-    },
-    {
-      "frage": "Ab wann ein Smartphone, und welche Regeln?",
-      "schritt": "einstellungen"
-    }
-  ],
-  "schritte": [
-    {
-      "id": "eltern",
-      "titel": "Eltern informieren",
-      "einleitung": "Verschaffen Sie sich zuerst einen Überblick, bevor Sie Regeln festlegen.",
-      "links": [
-        {
-          "titel": "Gespräch mit Digitaltrainer Daniel Wolff",
-          "url": "https://koerber-stiftung.de/mediathek/unterschaetzen-eltern-digitale-risiken-daniel-wolff-ueber-medienerziehung-in-zeiten-von-ki-und-social-media/",
-          "beschreibung": "Über KI, YouTube Kids und Mediennutzung. Sehr empfohlen als Einstieg.",
-          "format": "audio",
-          "alter": ["alle"],
-          "region": "bundesweit"
-        },
-        {
-          "titel": "Medienzeit Elternblog",
-          "url": "https://www.medienzeit-elternblog.de/",
-          "beschreibung": "Alltagstaugliche Orientierung und Expertentipps aus dem Kinderschutz.",
-          "format": "text",
-          "alter": ["alle"],
-          "region": "bundesweit"
-        }
-      ]
-    },
-    {
-      "id": "kind",
-      "titel": "Kind informieren",
-      "einleitung": "Erklären Sie Ihrem Kind die Regeln im Netz, möglichst gemeinsam und Schritt für Schritt.",
+      "titel": "1. Basiswissen für alle",
+      "hinweis": "Für den Einstieg eignet sich oft ein zentral im Haushalt frei zugängliches Familien-Device.",
       "links": [
         {
           "titel": "Surfschein für Kinder (Internet-ABC)",
           "url": "https://www.internet-abc.de/surfschein/",
-          "beschreibung": "Für Kinder, die schon lesen können. Am besten die Lernmodule gemeinsam durchgehen.",
-          "format": "tool",
-          "alter": ["1-2", "3-4"],
-          "region": "bundesweit"
+          "beschreibung": "Für alle Kinder, die schon lesen können. Am besten gemeinsam die Lernmodule durchgehen!"
         },
         {
-          "titel": "WAS IST WAS: Handy & Smartphone",
-          "url": "https://tessloff.com/was-ist-was-handy/",
-          "beschreibung": "Kindgerechtes Sachbuch, das die Funktionen des Smartphones erklärt.",
-          "format": "buch",
-          "alter": ["1-2", "3-4"],
-          "region": "bundesweit"
+          "titel": "Mediennutzungsvertrag aufsetzen",
+          "url": "https://www.mediennutzungsvertrag.de/",
+          "beschreibung": "Feste Regeln & Zeitfenster vereinbaren statt endloser Diskussionen."
         },
         {
-          "titel": "MiniMedia: Medienthemen für Kinder",
-          "url": "https://www.blm.de/de/wir-foerdern/medienkompetenz/informationsangebote/minimedia.cfm",
-          "beschreibung": "Medienthemen einfach erklärt, als PDF oder kostenfrei bestellbar.",
-          "format": "pdf",
-          "alter": ["alle"],
-          "region": "Bayern"
+          "titel": "BLM Medienkompetenz-Angebote",
+          "url": "https://www.blm.de/de/wir-foerdern/medienkompetenz/informationsangebote.cfm",
+          "beschreibung": "Informationen & Handreichungen der Bayerischen Landeszentrale für neue Medien."
         }
       ]
     },
     {
-      "id": "einstellungen",
-      "titel": "Einstellungen treffen",
-      "einleitung": "Legen Sie fest, ob und wann ein Smartphone passt, und vereinbaren Sie klare Regeln.",
+      "titel": "2. Entscheidungshilfe: Das erste eigene Smartphone?",
       "links": [
-        {
-          "titel": "Mediennutzungsvertrag aufsetzen",
-          "url": "https://www.mediennutzungsvertrag.de/",
-          "beschreibung": "Feste Regeln und Zeitfenster vereinbaren, statt endlos zu diskutieren.",
-          "format": "tool",
-          "alter": ["alle"],
-          "region": "bundesweit"
-        },
         {
           "titel": "Entscheidungshilfe: Ein Smartphone für mein Kind?",
           "url": "https://www.medien-sicher.de/2025/04/entscheidungshilfe-ein-smartphone-fuer-mein-kind/",
-          "beschreibung": "Praxis-Ratgeber: Passt ein Smartphone jetzt schon?",
-          "format": "text",
-          "alter": ["alle"],
-          "region": "bundesweit"
+          "beschreibung": "Passt ein Smartphone jetzt schon? Ein Praxis-Ratgeber von medien-sicher.de."
         },
         {
-          "titel": "Checkliste Erstes Smartphone",
+          "titel": "Checkliste Erstes Smartphone (SCHAU HIN!)",
           "url": "https://www.schau-hin.info/fileadmin/content/Downloads/Infografiken/Checkliste_ErstesSmartphone_250911.pdf",
-          "beschreibung": "Reife- und Sicherheitskriterien im Überblick.",
-          "format": "pdf",
-          "alter": ["alle"],
-          "region": "bundesweit"
+          "beschreibung": "Reife & Sicherheitskriterien im Überblick (PDF-Download)."
         },
         {
           "titel": "Smartphone-Alternativen (Smarter Start)",
           "url": "https://smarterstart.org/smartphone-alternativen",
-          "beschreibung": "Smarte Alternativen für Grundschulkinder.",
-          "format": "text",
-          "alter": ["alle"],
-          "region": "bundesweit"
+          "beschreibung": "Smarte Alternativen für Grundschulkinder entdecken."
         }
       ]
     },
     {
-      "id": "begleiten",
-      "titel": "Begleiten und dranbleiben",
-      "einleitung": "Medien ändern sich schnell. Bleiben Sie im Gespräch und holen Sie sich bei Bedarf Hilfe.",
+      "titel": "3. Interviews, Artikel & Umfragen",
       "links": [
         {
-          "titel": "SCHAU HIN! Ratgeber Games",
+          "titel": "Körber-Stiftung: Unterschätzen Eltern digitale Risiken?",
+          "url": "https://koerber-stiftung.de/mediathek/unterschaetzen-eltern-digitale-risiken-daniel-wolff-ueber-medienerziehung-in-zeiten-von-ki-und-social-media/",
+          "beschreibung": "Sehr empfohlen: Gespräch mit Digitaltrainer Daniel Wolff über KI, YouTube Kids & Mediennutzung."
+        },
+        {
+          "titel": "Interview mit Digitaltrainer Daniel Wolff",
+          "url": "https://juliameyn.com/interview-daniel-wolff",
+          "beschreibung": "Julia Meyn im Gespräch mit Daniel Wolff mit wertvollen Alltagstipps."
+        }
+      ]
+    },
+    {
+      "titel": "4. Gaming & Videospiele",
+      "links": [
+        {
+          "titel": "SCHAU HIN! – Ratgeber Games",
           "url": "https://www.schau-hin.info/games",
-          "beschreibung": "Chancen und Risiken von Videospielen, verständlich erklärt.",
-          "format": "text",
-          "alter": ["alle"],
-          "region": "bundesweit"
+          "beschreibung": "Allgemeine Infos, Chancen und Risiken von Videospielen."
+        },
+        {
+          "titel": "Eltern-LAN (bpb)",
+          "url": "https://www.bpb.de/veranstaltungen/reihen/eltern-lan/",
+          "beschreibung": "Kostenlose Online-Seminare der Bundeszentrale für politische Bildung."
+        },
+        {
+          "titel": "Spieleratgeber NRW",
+          "url": "https://spieleratgeber-nrw.de/",
+          "beschreibung": "Pädagogische Beurteilungen & Alters-Einschätzungen zu konkreten Spielen."
+        }
+      ]
+    },
+    {
+      "titel": "5. Buchtipps & Print-Materialien",
+      "links": [
+        {
+          "titel": "Buch: Generation Glücklich (Zuckersüß Verlag)",
+          "url": "https://www.zuckersuessverlag.de/products/generation-gluecklich",
+          "beschreibung": "Buchtipp für Eltern und Kinder ab ca. 8 Jahren."
+        },
+        {
+          "titel": "MiniMedia – Medienthemen für Kinder",
+          "url": "https://www.blm.de/de/wir-foerdern/medienkompetenz/informationsangebote/minimedia.cfm",
+          "beschreibung": "Einfach erklärt als PDF oder kostenfrei bestellbar (BLM)."
+        },
+        {
+          "titel": "Buch: WAS IST WAS – Handy & Smartphone",
+          "url": "https://tessloff.com/was-ist-was-handy/",
+          "beschreibung": "Kindgerechtes Sachbuch zum Thema Smartphone."
+        }
+      ]
+    },
+    {
+      "titel": "6. Blogtipps",
+      "links": [
+        {
+          "titel": "Medienzeit Elternblog",
+          "url": "https://www.medienzeit-elternblog.de/",
+          "beschreibung": "Alltagstaugliche Orientierung, Denkanstöße & Expertentipps aus dem Kinderschutz."
+        }
+      ]
+    },
+    {
+      "titel": "7. Sonstiges & hilfreiche Tools",
+      "links": [
+        {
+          "titel": "Digitalcheck NRW",
+          "url": "https://www.digitalcheck.nrw/",
+          "beschreibung": "Kostenfreies Quiz zur Selbsteinschätzung der eigenen Medienkompetenz inkl. Weiterbildungstipps."
         },
         {
           "titel": "Frage? Wir antworten! (Medienanstalt NRW)",
           "url": "https://www.medienanstalt-nrw.de/frageantwort.html",
-          "beschreibung": "Individuelle Antworten auf persönliche Fragen rund um Medienthemen.",
-          "format": "beratung",
-          "alter": ["alle"],
-          "region": "NRW"
+          "beschreibung": "Individuelle Antworten auf persönliche Fragen rund um Medienthemen."
         }
       ]
     }
