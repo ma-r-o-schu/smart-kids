@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Überblick für Eltern: Medienkompetenz für Grundschulkinder in vier Schritten.">
+  <meta name="description" content="Überblick für Eltern: Medienkompetenz für Grundschulkinder in fünf Schritten.">
   <link rel="icon" href="logo.svg" type="image/svg+xml">
   <title>Medienkompetenz für Grundschulkinder</title>
   <style>
@@ -40,22 +40,6 @@
     }
     main { max-width: 640px; margin: 0 auto; padding: 28px 18px 64px; }
 
-    header { display: flex; align-items: center; gap: 16px; }
-    header img { width: 68px; height: 68px; flex: none; }
-    header h1 { font-size: 1.45rem; line-height: 1.25; margin: 0; color: var(--blue); }
-
-    .bio {
-      margin-top: 18px;
-      padding: 16px 20px;
-      background: var(--card);
-      border-radius: 14px;
-      border-left: 4px solid var(--orange);
-      box-shadow: 0 2px 10px var(--shadow);
-    }
-    .bio p { margin: 0 0 10px; }
-    .bio p:last-child { margin-bottom: 0; }
-
-    /* Link zur Alternativversion (oben) */
     .version2 {
       display: inline-block;
       margin-bottom: 14px;
@@ -70,6 +54,20 @@
     .version2:hover, .version2:focus-visible { background: var(--orange); color: #fff; outline: none; }
     .version2[hidden] { display: none; }
 
+    header { display: flex; align-items: center; gap: 16px; }
+    header img { width: 68px; height: 68px; flex: none; }
+    header h1 { font-size: 1.3rem; line-height: 1.3; margin: 0; color: var(--blue); }
+
+    .bio {
+      margin-top: 18px;
+      padding: 16px 20px;
+      background: var(--card);
+      border-radius: 14px;
+      border-left: 4px solid var(--orange);
+      box-shadow: 0 2px 10px var(--shadow);
+    }
+    .bio p { margin: 0; }
+
     /* Fakten-Ticker */
     .fakten {
       touch-action: pan-y;
@@ -82,6 +80,7 @@
       border-radius: 14px;
       box-shadow: 0 4px 14px var(--shadow);
     }
+    .fakten:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
     .fakten-kopf {
       display: flex;
       justify-content: space-between;
@@ -110,9 +109,9 @@
     .fakt-punkte span { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); }
     .fakt-punkte span.aktiv { background: var(--orange); }
 
-    /* Startbereich */
+    /* Startfragen */
     .start { margin-top: 26px; }
-    .start h2 { font-size: 1rem; margin: 0 0 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+    .start h2 { font-size: 0.95rem; margin: 0 0 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
     .fragen { display: grid; gap: 10px; }
     .fragen a {
       display: block;
@@ -125,34 +124,26 @@
       font-weight: 600;
     }
     .fragen a:hover, .fragen a:focus-visible { background: var(--blue); color: #fff; outline: none; }
-    .community {
-      display: block;
-      margin-top: 14px;
-      padding: 14px 16px;
-      text-align: center;
-      background: var(--orange);
-      color: #fff;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .community:hover, .community:focus-visible { filter: brightness(1.05); outline: none; }
-    .community[hidden] { display: none; }
 
-    /* Journey-Leiste */
+    /* Journey: fünf Schritte, gleich hoch */
     .journey { display: flex; gap: 6px; margin: 28px 0 0; padding: 0; list-style: none; counter-reset: schritt; }
-    .journey li { flex: 1; counter-increment: schritt; }
+    .journey li { flex: 1; min-width: 0; counter-increment: schritt; }
     .journey a {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 72px;
+      padding: 8px 4px;
       text-align: center;
-      padding: 10px 4px;
-      font-size: 0.8rem;
-      line-height: 1.25;
+      font-size: 0.76rem;
+      line-height: 1.2;
       color: var(--text);
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 10px;
       text-decoration: none;
+      hyphens: auto;
     }
     .journey a::before {
       content: counter(schritt);
@@ -160,11 +151,12 @@
       font-weight: 700;
       color: var(--orange);
       font-size: 1rem;
+      margin-bottom: 2px;
     }
     .journey a:hover, .journey a:focus-visible { border-color: var(--orange); outline: none; }
 
     /* Altersfilter */
-    .filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 0; }
+    .filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 0; }
     .filter button {
       font: inherit;
       font-size: 0.9rem;
@@ -179,10 +171,11 @@
     .filter button:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
 
     /* Schritte */
-    section.schritt { margin-top: 36px; scroll-margin-top: 16px; }
-    section.schritt h2 { font-size: 1.15rem; margin: 0; color: var(--blue); }
+    section.schritt, section.video { margin-top: 36px; scroll-margin-top: 16px; }
+    section.schritt h2, section.video h2 { font-size: 1.15rem; margin: 0; color: var(--blue); }
     section.schritt h2 span { color: var(--orange); margin-right: 6px; }
     .einleitung { margin: 6px 0 0; font-size: 0.93rem; color: var(--muted); }
+    section.schritt[hidden] { display: none; }
 
     a.card {
       display: block;
@@ -201,7 +194,20 @@
     a.card strong { display: block; font-size: 1rem; }
     a.card span.beschr { display: block; font-size: 0.9rem; color: var(--muted); margin-top: 4px; }
     a.card .region { display: inline-block; font-size: 0.75rem; color: var(--muted); margin-top: 6px; }
-    a.card[hidden], section.schritt[hidden] { display: none; }
+    a.card[hidden] { display: none; }
+
+    /* Video */
+    .video-rahmen {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin-top: 12px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+    .video-rahmen iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
     footer {
       margin-top: 52px;
@@ -222,6 +228,7 @@
 <body>
 <main>
   <a class="version2" id="version2" href="#" hidden></a>
+
   <header>
     <img src="logo.svg" alt="Logo Medienkompetenz für Grundschulkinder">
     <h1 id="titel">Medienkompetenz für Grundschulkinder</h1>
@@ -242,15 +249,19 @@
   <nav class="start" aria-labelledby="start-titel">
     <h2 id="start-titel">Was möchten Sie wissen?</h2>
     <div class="fragen" id="fragen"></div>
-    <a class="community" id="community" href="#" target="_blank" rel="noopener noreferrer" hidden></a>
   </nav>
 
-  <ol class="journey" id="journey" aria-label="Die vier Schritte"></ol>
+  <ol class="journey" id="journey" aria-label="Die Schritte"></ol>
 
   <div class="filter" id="filter" role="group" aria-label="Nach Alter filtern"></div>
 
   <div id="fehler">Die Inhalte konnten nicht geladen werden. Bitte später erneut versuchen.</div>
   <div id="schritte"></div>
+
+  <section class="video" id="video" hidden>
+    <h2 id="video-titel">Video-Tipp für Eltern</h2>
+    <div class="video-rahmen" id="video-rahmen"></div>
+  </section>
 
   <footer>
     <p>Zuletzt aktualisiert: <span id="stand"></span></p>
@@ -280,7 +291,8 @@
     return node;
   }
 
-  // Fakten-Ticker: wechselt automatisch, pausiert bei Mausberührung und Fokus, lässt sich weiterschalten.
+  // Fakten-Ticker: wechselt nach FAKT_INTERVALL_MS, pausiert bei Maus/Fokus,
+  // lässt sich per Button, Wischen (Maus oder Touch) und Pfeiltasten weiterschalten.
   function starteFakten(fakten) {
     const box = document.getElementById('fakten-box');
     if (!fakten || fakten.length === 0) return;
@@ -289,8 +301,10 @@
     const textEl = document.getElementById('fakt-text');
     const quelleEl = document.getElementById('fakt-quelle');
     const punkteEl = document.getElementById('fakt-punkte');
+    const n = fakten.length;
     let index = 0;
     let pausiert = false;
+    let timer = null;
 
     fakten.forEach(() => punkteEl.appendChild(el('span')));
 
@@ -300,13 +314,10 @@
       textEl.textContent = f.text;
       quelleEl.textContent = 'Quelle: ';
       quelleEl.appendChild(el('a', { href: f.url, target: '_blank', rel: 'noopener noreferrer' }, f.quelle));
-      [...punkteEl.children].forEach((p, n) => p.classList.toggle('aktiv', n === index));
+      [...punkteEl.children].forEach((p, k) => p.classList.toggle('aktiv', k === index));
     }
 
-    const n = fakten.length;
-    let timer = null;
-
-    // Automatischer Wechsel nach FAKT_INTERVALL_MS. Der Timer startet nach jeder manuellen Aktion neu.
+    // Timer startet nach jeder manuellen Aktion neu
     function starteTimer() {
       clearInterval(timer);
       if (n > 1) {
@@ -323,7 +334,6 @@
 
     document.getElementById('fakten-weiter').addEventListener('click', () => weiter(1));
 
-    // Wischen (Maus, Touch, Stift): nach links = nächster Fakt, nach rechts = vorheriger.
     let startX = null;
     box.addEventListener('pointerdown', e => { startX = e.clientX; });
     box.addEventListener('pointerup', e => {
@@ -334,7 +344,6 @@
     });
     box.addEventListener('pointercancel', () => { startX = null; });
 
-    // Tastatur: Pfeiltasten, wenn der Ticker den Fokus hat
     box.addEventListener('keydown', e => {
       if (e.key === 'ArrowRight') weiter(1);
       if (e.key === 'ArrowLeft') weiter(-1);
@@ -356,15 +365,14 @@
     const bio = document.getElementById('bio');
     daten.profil.bio.forEach(absatz => bio.appendChild(el('p', {}, absatz)));
 
-    starteFakten(daten.fakten);
-
-    // Link zur Version 2: nur anzeigen, wenn eine Adresse eingetragen ist
     if (daten.profil.version2_url) {
       const v2 = document.getElementById('version2');
       v2.href = daten.profil.version2_url;
-      v2.textContent = daten.profil.version2_titel || 'Zur Version 2';
+      v2.textContent = daten.profil.version2_titel || 'Zurück';
       v2.hidden = false;
     }
+
+    starteFakten(daten.fakten);
 
     // Startfragen
     const fragen = document.getElementById('fragen');
@@ -372,17 +380,14 @@
       fragen.appendChild(el('a', { href: '#schritt-' + f.schritt }, f.frage));
     });
 
-    // WhatsApp-Community: nur anzeigen, wenn ein Link eingetragen ist
-    if (daten.profil.whatsapp_url) {
-      const c = document.getElementById('community');
-      c.href = daten.profil.whatsapp_url;
-      c.textContent = daten.profil.whatsapp_titel || 'Zur WhatsApp-Community';
-      c.hidden = false;
-    }
+    // Nur Links mit eingetragener Adresse anzeigen
+    const sichtbareSchritte = daten.schritte
+      .map(s => ({ ...s, links: s.links.filter(l => l.url) }))
+      .filter(s => s.links.length > 0);
 
     // Journey-Leiste
     const journey = document.getElementById('journey');
-    daten.schritte.forEach(s => {
+    sichtbareSchritte.forEach(s => {
       const li = el('li');
       li.appendChild(el('a', { href: '#schritt-' + s.id }, s.titel));
       journey.appendChild(li);
@@ -390,7 +395,7 @@
 
     // Altersfilter: nur Alter anbieten, das tatsächlich vorkommt
     const alterWerte = new Set(['alle']);
-    daten.schritte.forEach(s => s.links.forEach(l => l.alter.forEach(a => alterWerte.add(a))));
+    sichtbareSchritte.forEach(s => s.links.forEach(l => l.alter.forEach(a => alterWerte.add(a))));
     const filter = document.getElementById('filter');
     const buttons = [];
     ['alle', 'vorschule', '1-2', '3-4'].filter(a => alterWerte.has(a)).forEach(a => {
@@ -401,7 +406,7 @@
 
     // Schritte und Karten
     const ziel = document.getElementById('schritte');
-    daten.schritte.forEach((s, index) => {
+    sichtbareSchritte.forEach((s, index) => {
       const sec = el('section', { class: 'schritt', id: 'schritt-' + s.id });
       const h2 = el('h2');
       h2.append(el('span', {}, String(index + 1)), s.titel);
@@ -409,12 +414,7 @@
       sec.appendChild(el('p', { class: 'einleitung' }, s.einleitung));
 
       s.links.forEach(link => {
-        const a = el('a', {
-          class: 'card',
-          href: link.url,
-          target: '_blank',
-          rel: 'noopener noreferrer'
-        });
+        const a = el('a', { class: 'card', href: link.url, target: '_blank', rel: 'noopener noreferrer' });
         a.dataset.alter = link.alter.join(' ');
         a.appendChild(el('span', { class: 'format' }, FORMAT_LABEL[link.format] || link.format));
         a.appendChild(el('strong', {}, link.titel));
@@ -431,14 +431,26 @@
       buttons.forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
       document.querySelectorAll('a.card').forEach(card => {
         const alter = card.dataset.alter.split(' ');
-        const passt = wahl === 'alle' || alter.includes('alle') || alter.includes(wahl);
-        card.hidden = !passt;
+        card.hidden = !(wahl === 'alle' || alter.includes('alle') || alter.includes(wahl));
       });
       document.querySelectorAll('section.schritt').forEach(sec => {
-        const sichtbar = sec.querySelectorAll('a.card:not([hidden])').length > 0;
-        sec.hidden = !sichtbar;
+        sec.hidden = sec.querySelectorAll('a.card:not([hidden])').length === 0;
       });
     }));
+
+    // Video-Tipp: nur anzeigen, wenn eine YouTube-ID eingetragen ist
+    if (daten.video && daten.video.embed_id) {
+      document.getElementById('video-titel').textContent = daten.video.titel || 'Video-Tipp für Eltern';
+      const rahmen = document.getElementById('video-rahmen');
+      rahmen.appendChild(el('iframe', {
+        src: 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(daten.video.embed_id),
+        title: daten.video.titel || 'Video-Tipp für Eltern',
+        loading: 'lazy',
+        allow: 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+        allowfullscreen: ''
+      }));
+      document.getElementById('video').hidden = false;
+    }
 
     // Fußbereich
     document.getElementById('stand').textContent = daten.profil.zuletzt_aktualisiert || '';

@@ -2,16 +2,17 @@
   "profil": {
     "titel": "Erst Kindheit, dann Phone – und erst Smart, dann Phone. Ein eigenes Smartphone sollte eine bewusste Entscheidung sein – dabei wollen wir unterstützen",
     "bio": [
-      "Schön, dass Sie sich für digitale Medien im Leben Ihres Kindes interessieren. Diese Seite führt Sie in vier Schritten durch das Thema: von der eigenen Orientierung über Gespräche mit dem Kind bis zu passenden Einstellungen und Regeln.",
-      "Unser Motto: Erst Kindheit, dann Phone – und erst Smart, dann Phone. Ein eigenes Smartphone sollte eine bewusste Entscheidung sein, nicht nur, weil „alle es so machen“."
+      "Schön, dass Sie sich für digitale Medien im Leben Ihres Kindes interessieren. Hier finden Sie in wenigen Schritten, was Sie wissen und tun können."
     ],
-    "whatsapp_titel": "Zur WhatsApp-Community",
     "version2_titel": "Zurück zur Hauptseite",
     "version2_url": "../",
-    "whatsapp_url": "",
     "zuletzt_aktualisiert": "Oktober 2026",
     "kontakt": "",
     "impressum_url": ""
+  },
+  "video": {
+    "titel": "Video-Tipp für Eltern",
+    "embed_id": ""
   },
   "fakten": [
     {
@@ -52,7 +53,7 @@
   "schritte": [
     {
       "id": "eltern",
-      "titel": "Eltern informieren",
+      "titel": "Informationen für Eltern",
       "einleitung": "Verschaffen Sie sich zuerst einen Überblick, bevor Sie Regeln festlegen.",
       "links": [
         {
@@ -75,7 +76,7 @@
     },
     {
       "id": "kind",
-      "titel": "Kind informieren",
+      "titel": "Mit den Kids sprechen",
       "einleitung": "Erklären Sie Ihrem Kind die Regeln im Netz, möglichst gemeinsam und Schritt für Schritt.",
       "links": [
         {
@@ -106,7 +107,7 @@
     },
     {
       "id": "einstellungen",
-      "titel": "Einstellungen treffen",
+      "titel": "Was tun",
       "einleitung": "Legen Sie fest, ob und wann ein Smartphone passt, und vereinbaren Sie klare Regeln.",
       "links": [
         {
@@ -145,7 +146,7 @@
     },
     {
       "id": "begleiten",
-      "titel": "Begleiten und dranbleiben",
+      "titel": "Dranbleiben",
       "einleitung": "Medien ändern sich schnell. Bleiben Sie im Gespräch und holen Sie sich bei Bedarf Hilfe.",
       "links": [
         {
@@ -163,6 +164,21 @@
           "format": "beratung",
           "alter": ["alle"],
           "region": "NRW"
+        }
+      ]
+    },
+    {
+      "id": "community",
+      "titel": "Link zur Community",
+      "einleitung": "Tauschen Sie sich mit anderen Eltern aus.",
+      "links": [
+        {
+          "titel": "Zur WhatsApp-Community",
+          "url": "",
+          "beschreibung": "Austausch mit anderen Eltern. Der Link wird hier eingetragen, sobald die Community steht.",
+          "format": "beratung",
+          "alter": ["alle"],
+          "region": "bundesweit"
         }
       ]
     }
